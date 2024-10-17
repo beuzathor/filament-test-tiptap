@@ -11,7 +11,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+         TiptapEditor::configureUsing(function (TiptapEditor $component) {
+            $component
+                ->blocks([
+
+                    TestBlock::class,
+
+                ]);
+        });
     }
 
     /**
